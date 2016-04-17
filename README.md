@@ -2,16 +2,18 @@
 
 CSS agnostic slider component for React.
 
-See demo: [https://mpowaga.github.io/react-slider/](https://mpowaga.github.io/react-slider/)
+Forked from [mpowaga's repo](https://mpowaga.github.io/react-slider/)
 
-### Important Note
-
-This is an alpha release. Use with caution and hope.
+Changes made:
+-Updated index.html dependencies (original was made before ReactDOM was separate)
+-Utilized the code from 9 pull requests that were never merged into the original repo
+-Built in the option to have the slider's value display on the handle
+-Cleaned up the API a bit so that creating a working slider requires less code.
 
 ### Installation
 
 ```sh
-npm install react-slider
+npm install react-sliders
 ```
 
 ### Overview
@@ -52,6 +54,10 @@ React.render(
 Now you can style it as you want. Checkout the `index.html` example to see how.
 
 ### Properties
+
+##### valueOnSlider {boolean}
+
+Displays the current value on the slider handle when true.
 
 ##### min {number} default: 0
 
@@ -133,7 +139,7 @@ Inverts the slider.
 
 Callback called before starting to move a handle.
 
-##### onChange {func}
+##### onValueChange {func}
 
 Callback called on every value change.
 
