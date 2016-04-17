@@ -6,9 +6,8 @@ Forked from [mpowaga's repo](https://github.com/mpowaga/react-slider)
 
 Changes made:
 - Updated index.html dependencies (original was made before ReactDOM was separate)
-- Utilized the code from 9 pull requests that were never merged into the original repo
+- Incorporated the code from 9 pull requests that were never merged into the original repo
 - Built in the option to have the slider's value display on the handle
-- Cleaned up the API a bit so that creating a working slider requires less code.
 
 ### Installation
 
@@ -38,20 +37,59 @@ React.render(<ReactSlider defaultValue={[0, 100]} withBars />, document.body);
 React.render(<ReactSlider defaultValue={[0, 33, 67, 100]} withBars />, document.body);
 ```
 
-#### Provide custom handles:
 
-```javascript
-React.render(
-  <ReactSlider withBars>
-    <div className="my-handle">1</div>
-    <div className="my-handle">2</div>
-    <div className="my-handle">3</div>
+#### Provide custom handles:
+```
+ReactDOM.render(
+  React.createElement(ReactSlider, { defaultValue:10, withBars:true }, 
+    React.createElement("div", {className: "my-custom-handle"}, "Oh look")
+  ),
+  document.getElementById('custom')
+);
+
+ReactDOM.render(
+  <ReactSlider defaultValue={10} withBars={true}>
+    <div className="my-custom-handle">Oh look</div>
   </ReactSlider>,
-  document.body
+  document.getElementById('custom')
 );
 ```
 
 Now you can style it as you want. Checkout the `index.html` example to see how.
+
+
+#### Fancier example
+```
+ReactDOM.render(
+  React.createElement(ReactSlider, {
+    defaultValue: [0, 50,60,70,80,90, 100],
+    orientation: 'horizontal',
+    withBars: true,
+    pearling: true,
+    valueOnSlider: true,
+    minDistance: 10,
+    onValueChange: logValue
+  }),
+  document.getElementById('horizontal-2')
+);
+
+ReactDOM.render(
+   <ReactSlider
+    defaultValue={[0, 50,60,70,80,90, 100]}
+    orientation='horizontal'
+    withBars={true}
+    pearling={true}
+    valueOnSlider={true}
+    minDistance={10}
+    onValueChange={logValue}
+  />,
+  document.getElementById('horizontal-2')
+);
+
+function logValue(e){ console.log(e) }
+```
+
+
 
 ### Properties
 
