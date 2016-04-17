@@ -2,7 +2,7 @@
 
 CSS agnostic slider component for React.
 
-Forked from [mpowaga's repo](https://mpowaga.github.io/react-slider/)
+Forked from [mpowaga's repo](https://github.com/mpowaga/react-slider)
 
 Changes made:
 -Updated index.html dependencies (original was made before ReactDOM was separate)
