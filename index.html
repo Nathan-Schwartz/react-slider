@@ -12,12 +12,17 @@
         width: 100%;
         max-width: 500px;
         height: 50px;
+        margin:20px;
       }
 
       .vertical-slider {
         height: 380px;
         width: 50px;
-        border: 1px solid grey;
+      }
+
+      .my-custom-handle{
+        background: red;
+        color:white;
       }
 
       .handle {
@@ -29,6 +34,9 @@
         color: white;
         cursor: pointer;
         border-radius:40px;
+        width: 50px;
+        height: 48px;
+        line-height: 48px;
       }
 
       .handle.active {
@@ -52,15 +60,10 @@
 
       .horizontal-slider .handle {
         top: 1px;
-        width: 50px;
-        height: 48px;
-        line-height: 48px;
       }
 
       .vertical-slider .handle {
         left: 1px;
-        width: 48px;
-        line-height: 50px;
       }
 
       .vertical-slider .bar {
@@ -71,48 +74,52 @@
       #vertical {
         margin: 20px 10px;
       }
-
     </style>
   </head>
   <body>
     <div id="horizontal-0"></div>
     <div id="horizontal-1"></div>
     <div id="horizontal-2"></div>
+    <div id="custom"></div>
     <div id="vertical"></div>
 
     <script>
 
-      // <ReactSlider defaultValue={0} orientation='horizontal'/>
       ReactDOM.render(
         React.createElement(ReactSlider, {
           defaultValue: 0, 
           orientation: 'horizontal',
           onValueChange: logValue,
-          valueOnSlider: true
+          valueOnSlider: true,
+          pearling: true,
+          minDistance: 10,
         }),
         document.getElementById('horizontal-0')
       );
 
       ReactDOM.render(
         React.createElement(ReactSlider, {
-          defaultValue: [0, 100],
+          defaultValue: [0, 50,60,70,80,90, 100],
           orientation: 'horizontal',
           withBars: true,
           pearling: true,
+          valueOnSlider: true,
           minDistance: 10,
           onValueChange: logValue
         }),
-        document.getElementById('horizontal-1')
+        document.getElementById('horizontal-2')
       );
 
       ReactDOM.render(
-        React.createElement(ReactSlider, {
-          defaultValue: [0, 50, 100],
+        React.createElement(ReactSlider, { 
+          defaultValue:10, 
+          withBars:true,
           orientation: 'horizontal',
-          withBars: true,
           onValueChange: logValue
-        }),
-        document.getElementById('horizontal-2')
+        },
+          React.createElement("div", {className:"my-custom-handle"}, "custom")
+        ),
+        document.getElementById('custom')
       );
 
       ReactDOM.render(
@@ -121,11 +128,12 @@
           orientation: 'vertical',
           withBars: true,
           invert: true,
+          pearling: true,
+          minDistance: 10,
           onValueChange: logValue
         }),
         document.getElementById('vertical')
       );
-
 
       function logValue(e){
         console.log(e)

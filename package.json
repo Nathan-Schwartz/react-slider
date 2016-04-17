@@ -1,6 +1,6 @@
 {
   "name": "react-sliders",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Slider component for React",
   "main": "react-slider.js",
   "keywords": [
@@ -10,14 +10,9 @@
     "component"
   ],
   "author": "Nathan Schwartz <Nathan.Schwartz95@gmail.com>",
-  "contributors": [{
-    "name": "Florian Klampfer",
-    "email": "f.klampfer@gmail.com"
-  },
-  {
-    "name":"Michał Powaga",
-    "email": "michalpowaga13@gmail.com"
-  }
+  "contributors": [
+    "Florian Klampfer <f.klampfer@gmail.com>",
+    "Michał Powaga <michalpowaga13@gmail.com>"
   ],
   "license": "MIT",
   "scripts": {
@@ -25,9 +20,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nathan-Schwartz/react-slider.git"
+    "url": "git+https://github.com/Nathan-Schwartz/react-slider.git"
   },
   "peerDependencies": {
     "react": ">=0.14"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Nathan-Schwartz/react-slider/issues"
+  },
+  "homepage": "https://github.com/Nathan-Schwartz/react-slider#readme"
 }
