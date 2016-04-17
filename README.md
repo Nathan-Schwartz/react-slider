@@ -2,12 +2,18 @@
 
 CSS agnostic slider component for React.
 
-See demo: [https://mpowaga.github.io/react-slider/](https://mpowaga.github.io/react-slider/)
+Forked from [mpowaga's repo](https://mpowaga.github.io/react-slider/)
+
+Changes made:
+-Updated index.html dependencies (original was made before ReactDOM was separate)
+-Utilized the code from 9 pull requests that were never merged into the original repo
+-Built in the option to have the slider's value display on the handle
+-Cleaned up the API a bit so that creating a working slider requires less code.
 
 ### Installation
 
 ```sh
-npm install react-slider
+npm install react-sliders
 ```
 
 ### Overview
